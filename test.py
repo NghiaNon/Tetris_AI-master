@@ -18,7 +18,7 @@ def get_args():
     args = parser.parse_args()
     return args
 
-
+#triển khai đơn giản của vòng lặp thử nghiệm chơi Tetris đã được đào tạo
 def test(opt):
     if torch.cuda.is_available():
         torch.cuda.manual_seed(123)

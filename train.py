@@ -1,3 +1,4 @@
+#import các thư viện cần thiết
 import argparse
 import os
 import shutil
@@ -12,7 +13,7 @@ from src.deep_q_network import DeepQNetwork
 from src.tetris import Tetris
 from collections import deque
 
-
+#khởi tạo hàm để phân tích data kiểm soát các hoạt động khi chạy game
 def get_args():
     parser = argparse.ArgumentParser(
         """Implementation of Deep Q Network to play Tetris""")
@@ -35,7 +36,8 @@ def get_args():
     args = parser.parse_args()
     return args
 
-
+#đào tạo mô hình Q-deelearning
+#khởi tạo môi trường Tetris và mô hình DQN
 def train(opt):
     if torch.cuda.is_available():
         torch.cuda.manual_seed(123)
@@ -59,7 +61,7 @@ def train(opt):
     epoch = 0
     while epoch < opt.num_epochs:
         next_steps = env.get_next_states()
-        # Exploration or exploitation
+        # Thăm dò hoặc khai thác mô hình khi train
         epsilon = opt.final_epsilon + (max(opt.num_decay_epochs - epoch, 0) * (
                 opt.initial_epsilon - opt.final_epsilon) / opt.num_decay_epochs)
         u = random()
@@ -123,7 +125,7 @@ def train(opt):
         loss = criterion(q_values, y_batch)
         loss.backward()
         optimizer.step()
-
+#kết quả sau khi huấn luyện mô hình
         print("Epoch: {}/{}, Action: {}, Score: {}, Tetrominoes {}, Cleared lines: {}".format(
             epoch,
             opt.num_epochs,
