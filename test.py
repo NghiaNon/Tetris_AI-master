@@ -6,7 +6,7 @@ from src.tetris import Tetris
 
 def get_args():
     parser = argparse.ArgumentParser(
-        """Implementation of Deep Q Network to play Tetris""")
+        """thiết lập thuật toán sử dụng mạng Deep Q Network để tự chơi""")
 
     parser.add_argument("--width", type=int, default=10, help="The common width for all images")
     parser.add_argument("--height", type=int, default=20, help="The common height for all images")
