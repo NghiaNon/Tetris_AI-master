@@ -1,4 +1,4 @@
-# [PYTORCH] Deep Q-learning for playing Tetris
+# [PYTORCH] Sử dụng thuật toán Deep Q-learning để game Tetris tự động
 
 ## Introduction
 
@@ -12,7 +12,7 @@
 
 Với mã của tôi, bạn có thể:
 * **Huấn luyện mô hình từ đầu** bằng cách chạy **python train.py**
-* **Kiểm tra mô hình được đào tạo ** bằng cách chạy **python test.py**
+* **Kiểm tra mô hình được đào tạo** bằng cách chạy **python test.py**
 
 ## Mô hình đào tạo
 
