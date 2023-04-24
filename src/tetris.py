@@ -41,7 +41,7 @@ class Tetris:
         [[7, 0, 0],
          [7, 7, 7]]
     ]
-
+#khởi tạo thuộc tính các khối hình
     def __init__(self, height=20, width=10, block_size=20):
         self.height = height
         self.width = width
@@ -50,7 +50,7 @@ class Tetris:
                                    dtype=np.uint8) * np.array([204, 204, 255], dtype=np.uint8)
         self.text_color = (200, 20, 220)
         self.reset()
-
+#đặt lại trạng thái trò chơi
     def reset(self):
         self.board = [[0] * self.width for _ in range(self.height)]
         self.score = 0
@@ -64,6 +64,7 @@ class Tetris:
         self.gameover = False
         return self.get_state_properties(self.board)
 
+#xoay khối
     def rotate(self, piece):
         num_rows_orig = num_cols_new = len(piece)
         num_rows_new = len(piece[0])
@@ -76,6 +77,7 @@ class Tetris:
             rotated_array.append(new_row)
         return rotated_array
 
+#tính toán chiều cao và độ xụp của các khối
     def get_state_properties(self, board):
         lines_cleared, board = self.check_cleared_rows(board)
         holes = self.get_holes(board)
@@ -83,6 +85,7 @@ class Tetris:
 
         return torch.FloatTensor([lines_cleared, holes, bumpiness, height])
 
+#trả về số lượng chỗ trống khi ô sụp xuống
     def get_holes(self, board):
         num_holes = 0
         for col in zip(*board):
