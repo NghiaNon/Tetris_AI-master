@@ -1,16 +1,16 @@
-# [PYTORCH] Sử dụng thuật toán Deep Q-learning để game Tetris tự động
+# [PYTORCH] Sử dụng thuật toán Deep Q-learning để game Tetris tự chơi
 
 ## Introduction
 
-Đây là mã nguồn python của tôi để đào tạo một đặc vụ chơi Tetris. Có thể coi đây là một ví dụ rất cơ bản về ứng dụng của Reinforcement Learning.
+Đây là mã nguồn viết bằng python của nhóm để đào tạo một AI chơi Tetris. Đây là 1 con game đã từ rất lâu gắn liền với tuổi thơ của nhiều bạn trẻ. 
+Bằng các thuật toán theo phương pháp học sâu mới, nhóm em đã lên ý tưởng viết ra con game này. Rất mong các bạn sẽ thích nó!
 <p align="center">
   <img src="demo/tetris.gif" width=600><br/>
   <i>Tetris demo</i>
 </p>
 
-## Cách dùng
+## Hướng dẫn chạy game:
 
-Với mã của tôi, bạn có thể:
 * **Huấn luyện mô hình từ đầu** bằng cách chạy **python train.py**
 * **Kiểm tra mô hình được đào tạo** bằng cách chạy **python test.py**
 
