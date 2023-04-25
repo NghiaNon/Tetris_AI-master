@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Đây là mã nguồn viết bằng python của nhóm để đào tạo một AI chơi Tetris. Đây là 1 con game đã từ rất lâu gắn liền với tuổi thơ của nhiều bạn trẻ. 
+Đây là mã nguồn viết bằng python của nhóm để đào tạo một AI chơi Tetris. Đây là 1 con game đã từ rất lâu gắn liền với tuổi thơ của nhiều bạn. 
 Bằng các thuật toán theo phương pháp học sâu mới, nhóm em đã lên ý tưởng viết ra con game này. Rất mong các bạn sẽ thích nó!
 <p align="center">
   <img src="demo/tetris.gif" width=600><br/>
