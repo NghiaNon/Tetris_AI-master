@@ -26,3 +26,9 @@ Bạn có thể tìm thấy mô hình được đào tạo tại **training_mode
 * **pytorch** 
 * **numpy**
 * **matplotlib**
+
+## Tài liệu tham khảo
+* **https://codemyroad.wordpress.com/2013/04/14/tetris-ai-the-near-perfect-player/**
+* **https://learnopencv.com/tetris-with-opencv-python/**
+* **https://chat.openai.com/**
+* **http://www.beelab.info/2021/12/rl-series-thuat-toan-q-learning.html**
