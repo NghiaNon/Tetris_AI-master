@@ -95,6 +95,7 @@ class Tetris:
             num_holes += len([x for x in col[row + 1:] if x == 0])
         return num_holes
 
+#tính toán độ gập và chiều cao của các cột
     def get_bumpiness_and_height(self, board):
         board = np.array(board)
         mask = board != 0
@@ -107,6 +108,7 @@ class Tetris:
         total_bumpiness = np.sum(diffs)
         return total_bumpiness, total_height
 
+#để lấy các trạng thái tiếp theo có thể xảy ra sau khi di chuyển một khối Tetris hiện tại.
     def get_next_states(self):
         states = {}
         piece_id = self.ind
@@ -131,6 +133,7 @@ class Tetris:
             curr_piece = self.rotate(curr_piece)
         return states
 
+#để lấy trạng thái hiện tại của bảng chơi.
     def get_current_board_state(self):
         board = [x[:] for x in self.board]
         for y in range(len(self.piece)):
@@ -138,6 +141,7 @@ class Tetris:
                 board[y + self.current_pos["y"]][x + self.current_pos["x"]] = self.piece[y][x]
         return board
 
+#để tạo một khối Tetris mới sau khi khối hiện tại đã rơi xuống hoặc gặp va chạm.
     def new_piece(self):
         if not len(self.bag):
             self.bag = list(range(len(self.pieces)))
@@ -150,6 +154,7 @@ class Tetris:
         if self.check_collision(self.piece, self.current_pos):
             self.gameover = True
 
+#để kiểm tra xem khối Tetris hiện tại có va chạm với các khối đã đặt trên bảng chơi hay không
     def check_collision(self, piece, pos):
         future_y = pos["y"] + 1
         for y in range(len(piece)):
@@ -158,6 +163,7 @@ class Tetris:
                     return True
         return False
 
+#để cắt bỏ các phần không cần thiết của khối Tetris sau khi nó va chạm với các khối đã đặt trên bảng chơi.
     def truncate(self, piece, pos):
         gameover = False
         last_collision_row = -1
@@ -178,6 +184,7 @@ class Tetris:
                             last_collision_row = y
         return gameover
 
+#lưu trữ khối Tetris vào bảng chơi.
     def store(self, piece, pos):
         board = [x[:] for x in self.board]
         for y in range(len(piece)):
@@ -186,6 +193,7 @@ class Tetris:
                     board[y + pos["y"]][x + pos["x"]] = piece[y][x]
         return board
 
+# kiểm tra và xóa các hàng đã được điền đầy trên bảng chơi
     def check_cleared_rows(self, board):
         to_delete = []
         for i, row in enumerate(board[::-1]):
@@ -195,12 +203,14 @@ class Tetris:
             board = self.remove_row(board, to_delete)
         return len(to_delete), board
 
+#các hàng đã được xóa được thay thế bằng các hàng mới có giá trị 0 ở đầu bảng chơi,
     def remove_row(self, board, indices):
         for i in indices[::-1]:
             del board[i]
             board = [[0 for _ in range(self.width)]] + board
         return board
 
+#thực hiện một bước di chuyển trong trò chơi Tetris dựa trên hành động được chọn.
     def step(self, action, render=True, video=None):
         x, num_rotations = action
         self.current_pos = {"x": x, "y": 0}
@@ -230,6 +240,7 @@ class Tetris:
 
         return score, self.gameover
 
+# hiển thị trạng thái hiện tại của trò chơi Tetris.
     def render(self, video=None):
         if not self.gameover:
             img = [self.piece_colors[p] for row in self.get_current_board_state() for p in row]
