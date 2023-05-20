@@ -2,16 +2,16 @@
 
 ## Introduction
 
-Đây là mã nguồn viết bằng python của nhóm để đào tạo một AI chơi Tetris. Đây là 1 con game đã từ rất lâu gắn liền với tuổi thơ của nhiều bạn. 
-Bằng các thuật toán theo phương pháp học sâu mới, nhóm em đã lên ý tưởng viết ra con game này. Rất mong các bạn sẽ thích nó!
+* Đây là mã nguồn viết bằng python của nhóm để đào tạo một AI chơi Tetris. Đây là 1 con game đã từ rất lâu gắn liền với tuổi thơ của nhiều bạn. 
+* Bằng các thuật toán theo phương pháp học sâu mới, nhóm em đã lên ý tưởng viết ra con game này. Rất mong các bạn sẽ thích nó!
 <p align="center">
   <img src="demo/tetris.gif" width=600><br/>
   <i>Tetris demo</i>
 </p>
 
 ## Công cụ cần cài đặt để chạy game
-* **Game được viết bằng ngôn ngữ lập trình python vậy nên bạn có thể sử dụng bất kỳ app, công cụ nào hỗ trợ việc chạy code python.
-* **Ở đây nhóm mình chạy trên app **pycharm**
+* Game được viết bằng ngôn ngữ lập trình python vậy nên bạn có thể sử dụng bất kỳ app, công cụ nào hỗ trợ việc chạy code python.
+* Ở đây nhóm mình chạy trên app **pycharm**
 
 ## Hướng dẫn chạy game:
 
