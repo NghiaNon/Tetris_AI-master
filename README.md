@@ -9,6 +9,10 @@ Bằng các thuật toán theo phương pháp học sâu mới, nhóm em đã l�
   <i>Tetris demo</i>
 </p>
 
+## Công cụ cần cài đặt để chạy game
+* **Game được viết bằng ngôn ngữ lập trình python vậy nên bạn có thể sử dụng bất kỳ app, công cụ nào hỗ trợ việc chạy code python.
+* **Ở đây nhóm mình chạy trên app **pycharm**
+
 ## Hướng dẫn chạy game:
 
 * **Huấn luyện mô hình từ đầu** bằng cách chạy **python train.py**
